@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Card */
+.card {
+  width: 10vw;
+  height: 10vh;
+}
