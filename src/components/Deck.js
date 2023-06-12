@@ -58,22 +58,22 @@ const shuffleDeck = (arr) => {
 
 const getImages = () => {
   const images = [
-    { id: 1, url: "../src/images/poppy1.jpg"},
-    { id: 2, url: "../src/images/poppy2.jpg"},
-    { id: 3, url: "../src/images/poppy3.jpg"},
-    { id: 4, url: "../src/images/poppy4.jpg"},
-    { id: 5, url: "../src/images/poppy5.jpg"},
-    { id: 6, url: "../src/images/poppy6.jpg"},
-    { id: 7, url: "../src/images/poppy7.jpg"},
-    { id: 8, url: "../src/images/poppy8.jpg"},
-    { id: 9, url: "../src/images/poppy9.jpg"},
-    { id: 10, url: "../src/images/poppy10.jpg"},
-    { id: 11, url: "../src/images/poppy11.jpg"},
-    { id: 12, url: "../src/images/poppy12.jpg"},
-    { id: 13, url: "../src/images/poppy13.jpg"},
-    { id: 14, url: "../src/images/poppy14.jpg"},
-    { id: 15, url: "../src/images/poppy15.jpg"},
-    { id: 16, url: "../src/images/poppy16.jpg"}
+    { id: 1, url: "./images/poppy1.jpg"},
+    { id: 2, url: "./images/poppy2.jpg"},
+    { id: 3, url: "./images/poppy3.jpg"},
+    { id: 4, url: "./images/poppy4.jpg"},
+    { id: 5, url: "./images/poppy5.jpg"},
+    { id: 6, url: "./images/poppy6.jpg"},
+    { id: 7, url: "./images/poppy7.jpg"},
+    { id: 8, url: "./images/poppy8.jpg"},
+    { id: 9, url: "./images/poppy9.jpg"},
+    { id: 10, url: "./images/poppy10.jpg"},
+    { id: 11, url: "./images/poppy11.jpg"},
+    { id: 12, url: "./images/poppy12.jpg"},
+    { id: 13, url: "./images/poppy13.jpg"},
+    { id: 14, url: "./images/poppy14.jpg"},
+    { id: 15, url: "./images/poppy15.jpg"},
+    { id: 16, url: "./images/poppy16.jpg"}
   ]
 
   return images
