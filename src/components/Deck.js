@@ -1,39 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 
 
 const Deck = () => {
-  const imageArr = getImages()
+  const [score, setScore] = useState({})
+  const [total, setTotal] = useState(0)
+  const [best, setBest] = useState(0)
+  const [imageObj, setImageObj] = useState(getImages())
+
+  const handleClick = (id) => {
+    if(score[id] === 1) {
+      setScore({})
+      if(total > best) {
+        setBest(total)
+      } 
+      setTotal(0)
+    } else {
+       setScore({...score, [id]: 1})
+       setTotal(total + 1)
+    }
+    setImageObj(shuffleDeck(imageObj))
+  }
+
 
   return (
+    <>
+    <div className="score">
+      <div>Score: {total}</div>
+      <div>Best: {best}</div>
+    </div>
     <div className="deck">
-      {imageArr.map((pic, index) => 
-        <Card key={index} image={pic} />
+      {imageObj.map((image) => 
+        <Card 
+          key={image.id} 
+          image={image.url}
+          onClick={() => handleClick(image.id)}
+          index={image.id}
+          />
       )}
     </div>
+    </>
   )
 }
 
+const shuffleDeck = (arr) => {
+  const shuffleArr = [...arr]
+
+  for(let i = shuffleArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const temp = shuffleArr[i]
+    shuffleArr[i] = shuffleArr[j]
+    shuffleArr[j] = temp 
+  }
+
+  return shuffleArr
+}
+
 const getImages = () => {
-  const img1 = "../src/images/poppy1.jpg"
-  const img2 = "../src/images/poppy2.jpg"
-  const img3 = "../src/images/poppy3.jpg"
-  const img4 = "../src/images/poppy4.jpg"
-  const img5 = "../src/images/poppy5.jpg"
-  const img6 = "../src/images/poppy6.jpg"
-  const img7 = "../src/images/poppy7.jpg"
-  const img8 = "../src/images/poppy8.jpg"
-  const img9 = "../src/images/poppy9.jpg"
-  const img10 = "../src/images/poppy10.jpg"
-  const img11 = "../src/images/poppy11.jpg"
-  const img12 = "../src/images/poppy12.jpg"
-  const img13 = "../src/images/poppy13.jpg"
-  const img14 = "../src/images/poppy14.jpg"
-  const img15 = "../src/images/poppy15.jpg"
-  const img16 = "../src/images/poppy16.jpg"
-  const images = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16]
+  const images = [
+    { id: 1, url: "../src/images/poppy1.jpg"},
+    { id: 2, url: "../src/images/poppy2.jpg"},
+    { id: 3, url: "../src/images/poppy3.jpg"},
+    { id: 4, url: "../src/images/poppy4.jpg"},
+    { id: 5, url: "../src/images/poppy5.jpg"},
+    { id: 6, url: "../src/images/poppy6.jpg"},
+    { id: 7, url: "../src/images/poppy7.jpg"},
+    { id: 8, url: "../src/images/poppy8.jpg"},
+    { id: 9, url: "../src/images/poppy9.jpg"},
+    { id: 10, url: "../src/images/poppy10.jpg"},
+    { id: 11, url: "../src/images/poppy11.jpg"},
+    { id: 12, url: "../src/images/poppy12.jpg"},
+    { id: 13, url: "../src/images/poppy13.jpg"},
+    { id: 14, url: "../src/images/poppy14.jpg"},
+    { id: 15, url: "../src/images/poppy15.jpg"},
+    { id: 16, url: "../src/images/poppy16.jpg"}
+  ]
 
   return images
 }
+
 
 export default Deck
