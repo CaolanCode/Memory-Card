@@ -1,7 +1,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 
 /* Deck */
@@ -12,11 +11,14 @@
   grid-gap: 10px;
   width: 100vw;
   align-content: center;
+  background-color: purple;
 }
 
 /* Card */
 .card {
   padding: 10px;
+  background-color: yellow;
+  border-radius: 4px;
 }
 .card img {
   object-fit: cover;
